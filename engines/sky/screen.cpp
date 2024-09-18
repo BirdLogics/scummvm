@@ -207,6 +207,20 @@ void Screen::recreate() {
 		}
 		screenPos += (GRID_H - 1) * GAME_SCREEN_WIDTH;
 	}
+
+	if (Logic::_scriptVariables[LAYER_0_ID] == 140) {
+		screenPos = _currentScreen;
+		for (uint32 x = 133; x < 167; x++) {
+			for (uint32 y = 48; y < 69; y++) {
+				screenPos[x + y*GAME_SCREEN_WIDTH] = 204;
+			}
+		}
+		for (uint32 x = 169; x < 202; x++) {
+			for (uint32 y = 72; y < 92; y++) {
+				screenPos[x + y*GAME_SCREEN_WIDTH] = 204;
+			}
+		}
+	}
 }
 
 void Screen::flip(bool doUpdate) {

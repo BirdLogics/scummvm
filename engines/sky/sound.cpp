@@ -1221,6 +1221,36 @@ void Sound::stopSpeech() {
 }
 
 bool Sound::startSpeech(uint16 textNum) {
+	switch (textNum) {
+		case 44:
+		case 86:
+		case 161:
+		case 164:
+		case 4431:
+		case 4434:
+		case 4457:
+		case 8442:
+		case 8590:
+		case 8688:
+		case 9388:
+		case 12299:
+		case 12352:
+		case 12354:
+		case 12381:
+		case 12788:
+		case 12789:
+		case 12791:
+		case 12794:
+		case 16722:
+		case 16858:
+		case 17101:
+		case 17219:
+		case 17311:
+			return false;
+		default:
+			break;
+	}
+
 	if (!(SkyEngine::_systemVars->systemFlags & SF_ALLOW_SPEECH))
 		return false;
 	uint16 speechFileNum = _speechConvertTable[textNum >> 12] + (textNum & 0xFFF);

@@ -38,7 +38,7 @@ struct HuffTree {
 	unsigned char value;
 };
 
-#define NUM_PATCH_MSG 9
+#define NUM_PATCH_MSG 26
 
 struct PatchMessage {
 	uint32 textNr;

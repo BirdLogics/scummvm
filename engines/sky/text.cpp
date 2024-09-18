@@ -64,6 +64,33 @@ Text::Text(SkyEngine *vm, Disk *skyDisk, SkyCompact *skyCompact) : _skyDisk(skyD
 		_controlCharacterSet.addr = NULL;
 		_linkCharacterSet.addr = NULL;
 	}
+
+	// for (uint32 i=0; i<565; i++) {
+	// 	getText_orig(i);
+	// 	debug(0, "| %d | %s |", i, _textBuffer);
+	// }
+	// for (uint32 i=4097; i<4581; i++) {
+	// 	getText_orig(i);
+	// 	debug(0, "| %d | %s |", i, _textBuffer);
+	// }
+	// for (uint32 i=8193; i< 9495; i++) {
+	// 	getText_orig(i);
+	// 	if (_textBuffer[0] != '?' && _textBuffer[1] != '\0') {
+	// 		debug(0, "| %d | %s |", i, _textBuffer);
+	// 	}
+	// }
+	// for (uint32 i=12289; i<13210; i++) {
+	// 	getText_orig(i);
+	// 	debug(0, "| %d | %s |", i, _textBuffer);
+	// }
+	// for (uint32 i=16385; i<17524; i++) {
+	// 	getText_orig(i);
+	// 	debug(0, "| %d | %s |", i, _textBuffer);
+	// }
+	// for (uint32 i=20481; i<21011; i++) {
+	// 	getText_orig(i);
+	// 	debug(0, "| %d | %s |", i, _textBuffer);
+	// }
 }
 
 Text::~Text() {
@@ -528,10 +555,28 @@ const PatchMessage Text::_patchedMessages[NUM_PATCH_MSG] = {
 	{ 28686, "Musikvolym" },
 	{ 4336, "Wir befinden uns EINHUNDERTZWANZIG METER #ber dem ERBODEN!" }, // - german
 	{ 28686, "Volume de musique" }, // - french
+
+	{ 44, "I'm FAMISHED! That annoying Security ALERT..." }, // - clean english
+	{ 161, "It's got that SECURITY logo on it." },
+	{ 4431, "I always SUSPECTED you of laughing at me..." },
+	{ 4434, "There! That wasn't funny." },
+	{ 4457, "No! It's an OLD model, with INCOMPATIBLE PORTS!" },
+	{ 8442, "Well, I couldn't care less about beavers!" },
+	{ 12299, "Kidney, lung or BRAIN?" },
+	{ 12352, "I'll have to SELL you my BRAIN!" },
+	{ 12354, "When I said I'd TAKE your BRAIN..." },
+	{ 12381, "This is CRAZY, Foster." },
+	{ 12788, "Good GRIEF! It's positively DISGUSTING..." },
+	{ 12789, "People with EXTRA PARTS!" },
+	{ 12791, "Huh, it's blank." },
+	{ 12794, "Huh, it's blank." },
+	{ 16722, "No way I'm going to LOOK for them though!" },
+	{ 16858, "So the JERKS had her KILLED!" },
+	{ 17311, "...and your ROMANTIC PREFERENCES." },
 };
 
 const uint16 Text::_patchLangIdx[8] = {
-	0xFFFF, // SKY_ENGLISH
+	9, // SKY_ENGLISH
 	7,		// SKY_GERMAN
 	8,		// SKY_FRENCH
 	0xFFFF, // SKY_USA
@@ -542,7 +587,7 @@ const uint16 Text::_patchLangIdx[8] = {
 };
 
 const uint16 Text::_patchLangNum[8] = {
-	0, // SKY_ENGLISH
+	17, // SKY_ENGLISH
 	1, // SKY_GERMAN
 	1, // SKY_FRENCH
 	0, // SKY_USA
